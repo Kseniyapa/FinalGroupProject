@@ -8,5 +8,6 @@ public class UxCrowdTest {
     @Test
     public void firstTest() {
         DriverManager.getDriver().get("http://test.uxcrowd.ru");
+    //test
     }
 }
