@@ -1,6 +1,7 @@
 package pages;
 
 import com.pflb.learning.DriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -51,6 +52,32 @@ public class StartPage {
 
     @FindBy(xpath = "//*[@id=\"form_register_customer\"]/button")
     private WebElement buttonAgree;
+
+    @FindBy(xpath = "//*[@id=\"header-lk-button\"]")
+    WebElement enterButton;
+
+    @FindBy(xpath = "//a[@href=\"/about\"][@class=\"nl-header-link\"]")
+    WebElement menuItemProduct;
+
+    @FindBy(xpath = "//h2[@ng-tr=\"NLABO.NLABO1\"][@class=\"section-start__text-header\"]")
+    WebElement productTitle;
+
+    public String getProductTitle(){
+        return productTitle.getText();
+    }
+
+    public void clickItemProduct(){
+        menuItemProduct.click();
+    }
+
+
+    public void clickEnterButton(){
+        enterButton.click();
+        int secondsToWait = 2;
+        WebDriverWait wait = new WebDriverWait( DriverManager.getDriver(), secondsToWait);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@name=\"login\"]")));
+
+    }
 
 
     public void authClient(String login, String password) {

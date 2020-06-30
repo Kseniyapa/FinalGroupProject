@@ -1,6 +1,7 @@
 package pages;
 
 import com.pflb.learning.DriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -61,6 +62,22 @@ public class ProfilePage {
     @FindBy(xpath = "//*[@id=\"modal-root\"]/div/div/div/div/div/div[1]")
     private WebElement actualTextAfterCreateTest;
 
+    @FindBy(css = "#form_auth button")
+    private static WebElement submitButton;
+
+    @FindBy(xpath = "//*[contains(@class, 'slide-header welcome-h')]")
+    private static WebElement Welcome;
+
+
+    public static String getWelcomeText() {
+        submitButton.click();
+        int secondsToWait = 2;
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), secondsToWait);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@class, 'slide-header welcome-h')]")));
+        return Welcome.getText();
+
+    }
+
     public String actualText() {
         return actualTextAfterCreateTest.getText();
     }
@@ -104,5 +121,6 @@ public class ProfilePage {
         new WebDriverWait(DriverManager.getDriver(), 10).until(ExpectedConditions.visibilityOf(checkProfileEmail));
         return checkProfileEmail.getAttribute("value");
     }
+
 
 }

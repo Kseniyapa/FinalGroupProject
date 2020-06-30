@@ -114,4 +114,6 @@ public class UxCrowdTest {
         String actualText = profilePage.actualText();
         Assert.assertEquals(actualText,EXCEPTEDTEXTAFTERCREATENEWTEST);
     }
+
+
 }
