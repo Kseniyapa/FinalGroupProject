@@ -105,5 +105,4 @@ public class ProfilePage {
         return checkProfileEmail.getAttribute("value");
     }
 
-//t
 }
