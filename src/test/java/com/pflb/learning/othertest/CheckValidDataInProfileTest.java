@@ -14,7 +14,6 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static io.restassured.RestAssured.defaultParser;
 import static io.restassured.RestAssured.get;
 
 public class CheckValidDataInProfileTest {

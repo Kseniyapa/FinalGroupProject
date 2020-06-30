@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.RegistrationPage;
 import pages.StartPage;
+
 import java.util.Random;
 
 public class RegisterTest {

@@ -105,7 +105,7 @@ public class StartPage {
         DriverManager.getDriver().get(url);
     }
 
-    public void close(){
+    public void close() {
         DriverManager.getDriver().close();
     }
 }

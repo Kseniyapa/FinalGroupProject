@@ -105,15 +105,14 @@ public class UxCrowdTest {
     }
 
 
-
     @Test(priority = 7)
-    public void createNewTest (){
+    public void createNewTest() {
         profilePage.pressButtonCreateNewTest();
         profilePage.descriptionTest("Isdsa",
                 "dasfdfdfa.ru",
-                "fdsfdbhnfsnjgsdgs","ZADACHA");
+                "fdsfdbhnfsnjgsdgs", "ZADACHA");
         String actualText = profilePage.actualText();
-        Assert.assertEquals(actualText,EXCEPTEDTEXTAFTERCREATENEWTEST);
+        Assert.assertEquals(actualText, EXCEPTEDTEXTAFTERCREATENEWTEST);
     }
 
 
