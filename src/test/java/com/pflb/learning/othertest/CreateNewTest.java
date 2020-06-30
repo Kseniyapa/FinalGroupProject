@@ -1,5 +1,6 @@
-package com.pflb.learning;
+package com.pflb.learning.othertest;
 
+import com.pflb.learning.DriverManager;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,7 +16,7 @@ import java.util.regex.Pattern;
 
 import static io.restassured.RestAssured.get;
 
-public class UxCrowdTest {
+public class CreateNewTest {
     private final StartPage startPage = new StartPage();
     private final ProfilePage profilePage = new ProfilePage();
     private final RegistrationPage registrationPage = new RegistrationPage();
@@ -113,7 +114,6 @@ public class UxCrowdTest {
                 "fdsfdbhnfsnjgsdgs","ZADACHA");
         String actualText = profilePage.actualText();
         Assert.assertEquals(actualText,EXCEPTEDTEXTAFTERCREATENEWTEST);
+        startPage.close();
     }
-
-
 }

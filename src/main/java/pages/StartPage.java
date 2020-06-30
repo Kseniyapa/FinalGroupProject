@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class StartPage {
 
     private final String email = "@1secmail.com";
+    private static final int SECWAIT = 10;
 
     public StartPage() {
         PageFactory.initElements(DriverManager.getDriver(), this);
@@ -54,55 +55,57 @@ public class StartPage {
     private WebElement buttonAgree;
 
     @FindBy(xpath = "//*[@id=\"header-lk-button\"]")
-    WebElement enterButton;
+    private WebElement enterButton;
 
     @FindBy(xpath = "//a[@href=\"/about\"][@class=\"nl-header-link\"]")
-    WebElement menuItemProduct;
+    private WebElement menuItemProduct;
 
     @FindBy(xpath = "//h2[@ng-tr=\"NLABO.NLABO1\"][@class=\"section-start__text-header\"]")
-    WebElement productTitle;
+    private WebElement productTitle;
 
-    public String getProductTitle(){
+    public String getProductTitle() {
         return productTitle.getText();
     }
 
-    public void clickItemProduct(){
+    public void clickItemProduct() {
         menuItemProduct.click();
     }
 
 
-    public void clickEnterButton(){
+    public void clickEnterButton() {
         enterButton.click();
-        int secondsToWait = 2;
-        WebDriverWait wait = new WebDriverWait( DriverManager.getDriver(), secondsToWait);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@name=\"login\"]")));
+        new WebDriverWait(DriverManager.getDriver(), SECWAIT).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@name=\"login\"]")));
 
     }
 
 
     public void authClient(String login, String password) {
         loginButton.click();
-        new WebDriverWait(DriverManager.getDriver(), 10);
+        new WebDriverWait(DriverManager.getDriver(), SECWAIT);
         loginFiled.sendKeys(login);
         passwordField.sendKeys(password);
         submitButton.click();
+    }
+
+    public void registrationNewClient(String name, String position, String company, String mail, String phone) {
+        loginButton.click();
+        new WebDriverWait(DriverManager.getDriver(), SECWAIT).until(ExpectedConditions.elementToBeClickable(buttonRegistrationClient));
+        buttonRegistrationClient.click();
+        new WebDriverWait(DriverManager.getDriver(), SECWAIT).until(ExpectedConditions.elementToBeClickable(toConsumer));
+        toConsumer.click();
+        yourName.sendKeys(name);
+        yourPosition.sendKeys(position);
+        yourCompany.sendKeys(company);
+        yourEmail.sendKeys(mail + email);
+        yourPhone.sendKeys(phone);
+        buttonAgree.click();
     }
 
     public void open(String url) {
         DriverManager.getDriver().get(url);
     }
 
-    public void registrationNewClient(String name, String position, String company, String mail, String phone) {
-        loginButton.click();
-        new WebDriverWait(DriverManager.getDriver(), 10).until(ExpectedConditions.elementToBeClickable(buttonRegistrationClient));
-        buttonRegistrationClient.click();
-        new WebDriverWait(DriverManager.getDriver(),10).until(ExpectedConditions.elementToBeClickable(toConsumer));
-        toConsumer.click();
-        yourName.sendKeys(name);
-        yourPosition.sendKeys(position);
-        yourCompany.sendKeys(company);
-        yourEmail.sendKeys(mail + email );
-        yourPhone.sendKeys(phone);
-        buttonAgree.click();
+    public void close(){
+        DriverManager.getDriver().close();
     }
 }

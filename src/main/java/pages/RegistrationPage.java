@@ -6,9 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationPage {
-    public RegistrationPage (){
-        PageFactory.initElements(DriverManager.getDriver(),this);
-
+    public RegistrationPage () {
+        PageFactory.initElements(DriverManager.getDriver(), this);
     }
 
     @FindBy(xpath = "//*[@id=\"top\"]/div[2]/div/div/div/div[2]/div/div")
