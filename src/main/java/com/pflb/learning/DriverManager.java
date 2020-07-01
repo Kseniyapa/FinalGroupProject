@@ -18,7 +18,6 @@ public class DriverManager {
     private DriverManager() {
     }
 
-    ;
 
     public static WebDriver getDriver() {
         if (driver != null) return driver;
@@ -35,10 +34,10 @@ public class DriverManager {
         int globalTimeWait = Integer.parseInt(properties.getProperty("global.time.wait.second"));
         URL hubUrl;
         try {
-            hubUrl= new URL(hubUrlString);
+            hubUrl = new URL(hubUrlString);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
         }
-        catch (MalformedURLException e) {
-            throw  new RuntimeException(e); }
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", browserName);

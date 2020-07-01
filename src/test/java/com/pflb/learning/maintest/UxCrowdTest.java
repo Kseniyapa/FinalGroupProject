@@ -1,5 +1,6 @@
-package com.pflb.learning;
+package com.pflb.learning.maintest;
 
+import com.pflb.learning.DriverManager;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -104,15 +105,14 @@ public class UxCrowdTest {
     }
 
 
-
     @Test(priority = 7)
-    public void createNewTest (){
+    public void createNewTest() {
         profilePage.pressButtonCreateNewTest();
         profilePage.descriptionTest("Isdsa",
                 "dasfdfdfa.ru",
-                "fdsfdbhnfsnjgsdgs","ZADACHA");
+                "fdsfdbhnfsnjgsdgs", "ZADACHA");
         String actualText = profilePage.actualText();
-        Assert.assertEquals(actualText,EXCEPTEDTEXTAFTERCREATENEWTEST);
+        Assert.assertEquals(actualText, EXCEPTEDTEXTAFTERCREATENEWTEST);
     }
 
 

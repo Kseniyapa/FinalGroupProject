@@ -1,7 +1,6 @@
 package pages;
 
 import com.pflb.learning.DriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProfilePage {
+
+    private static final int SECWAIT = 10;
 
     public ProfilePage() {
         PageFactory.initElements(DriverManager.getDriver(), this);
@@ -62,21 +63,6 @@ public class ProfilePage {
     @FindBy(xpath = "//*[@id=\"modal-root\"]/div/div/div/div/div/div[1]")
     private WebElement actualTextAfterCreateTest;
 
-    @FindBy(css = "#form_auth button")
-    private static WebElement submitButton;
-
-    @FindBy(xpath = "//*[contains(@class, 'slide-header welcome-h')]")
-    private static WebElement Welcome;
-
-
-    public static String getWelcomeText() {
-        submitButton.click();
-        int secondsToWait = 2;
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), secondsToWait);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@class, 'slide-header welcome-h')]")));
-        return Welcome.getText();
-
-    }
 
     public String actualText() {
         return actualTextAfterCreateTest.getText();
@@ -85,18 +71,18 @@ public class ProfilePage {
     public void descriptionTest(String testName, String site, String segment, String quest) {
         nameTest.sendKeys(testName);
         url.sendKeys(site);
-        new WebDriverWait(DriverManager.getDriver(), 10);
+        new WebDriverWait(DriverManager.getDriver(), SECWAIT);
         goToChangePersons.click();
-        new WebDriverWait(DriverManager.getDriver(), 10).until(ExpectedConditions.visibilityOf(elementWhichWait));
+        new WebDriverWait(DriverManager.getDriver(), SECWAIT).until(ExpectedConditions.visibilityOf(elementWhichWait));
         nameSegment.sendKeys(segment);
         goToQuest.click();
-        new WebDriverWait(DriverManager.getDriver(), 10).until(ExpectedConditions.visibilityOf(setQuest));
+        new WebDriverWait(DriverManager.getDriver(), SECWAIT).until(ExpectedConditions.visibilityOf(setQuest));
         setQuest.sendKeys(quest);
-        new WebDriverWait(DriverManager.getDriver(), 10).until(ExpectedConditions.elementToBeClickable(addedQuest));
+        new WebDriverWait(DriverManager.getDriver(), SECWAIT).until(ExpectedConditions.elementToBeClickable(addedQuest));
         addedQuest.click();
-        new WebDriverWait(DriverManager.getDriver(), 10).until(ExpectedConditions.elementToBeClickable(checkAndRun));
+        new WebDriverWait(DriverManager.getDriver(), SECWAIT).until(ExpectedConditions.elementToBeClickable(checkAndRun));
         checkAndRun.click();
-        new WebDriverWait(DriverManager.getDriver(), 10).until(ExpectedConditions.elementToBeClickable(runFreeTest));
+        new WebDriverWait(DriverManager.getDriver(), SECWAIT).until(ExpectedConditions.elementToBeClickable(runFreeTest));
         runFreeTest.click();
     }
 
