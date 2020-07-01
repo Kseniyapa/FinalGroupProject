@@ -14,28 +14,28 @@ public class MenuPage {
     }
 
     @FindBy(xpath = "//a[@href=\"/about\"][@class=\"nl-header-link\"]")
-    WebElement menuItemProduct; //Вкладка "О продукте"
+    private WebElement menuItemProduct; //Вкладка "О продукте"
 
     @FindBy(xpath = "//div[@class=\"section-start__text\"]/h2")
-    WebElement productTitle; //Заголовок вкладки "О продукте"
+    private WebElement productTitle; //Заголовок вкладки "О продукте"
 
     @FindBy(xpath = "//a[@href=\"/price\"][@class=\"nl-header-link\"]")
-    WebElement menuItemPrice; //Вкладка "Цена"
+    private WebElement menuItemPrice; //Вкладка "Цена"
 
     @FindBy(xpath = "//div[@class=\"price-header\"]/h3")
-    WebElement productPrice; //Заголовок вкладки "Цена"
+    private WebElement productPrice; //Заголовок вкладки "Цена"
 
     @FindBy(xpath = "//a[@href=\"/faq\"][@class=\"nl-header-link\"]")
-    WebElement menuItemFAQ; //Вкладка "FAQ"
+    private WebElement menuItemFAQ; //Вкладка "FAQ"
 
     @FindBy(xpath = "//div[@class=\"nl--bold nl-faq-header\"]")
-    WebElement productFAQ; //Заголовок вкладки "FAQ"
+    private WebElement productFAQ; //Заголовок вкладки "FAQ"
 
     @FindBy(xpath = "//a[@href=\"/tester-register\"][@class=\"nl-header-link\"]")
-    WebElement menuItemWantTest; //Вкладка "Хочу тестировать сайты"
+    private WebElement menuItemWantTest; //Вкладка "Хочу тестировать сайты"
 
     @FindBy(xpath = "//div[@class=\"section-header__info\"]/h1")
-    WebElement productWantTest; //Заголовок вкладки "Хочу тестировать сайты"
+    private WebElement productWantTest; //Заголовок вкладки "Хочу тестировать сайты"
 
 
 

@@ -1,7 +1,6 @@
 package com.pflb.learning.tests;
 
 import com.pflb.learning.DriverManager;
-import com.pflb.learning.testpages.AuthTestPage;
 import com.pflb.learning.testpages.MenuPage;
 import com.pflb.learning.testpages.RegistrationTestPage;
 import org.testng.Assert;
@@ -13,10 +12,10 @@ public class MenuTest {
     private final RegistrationTestPage registrationTestPage = new RegistrationTestPage();
 
     private static final String BASEURL = "http://test.uxcrowd.ru";
-    private static final String realProductText = "Онлайн-инструмент для тестирования на пользователях";
-    private static final String realPriceText = "Тарифы на использование UXCrowd";
-    private static final String realFAQText = "Часто задаваемые вопросы";
-    private static final String realWantTestText = "Работа дома — тестирование сайтов";
+    private static final String REAL_PRODUCT_TEXT = "Онлайн-инструмент для тестирования на пользователях";
+    private static final String REAL_PRICE_TEXT = "Тарифы на использование UXCrowd";
+    private static final String REAL_FAQ_TEXT = "Часто задаваемые вопросы";
+    private static final String REAL_WANT_TEST_TEXT = "Работа дома — тестирование сайтов";
 
 
     @Test(priority = 1)
@@ -25,7 +24,7 @@ public class MenuTest {
         menuPage.clickItemProduct();
         String productText = menuPage.getProductTitle();
 
-        assert productText.equals(realProductText): "can not check product item";
+        Assert.assertEquals(productText, REAL_PRODUCT_TEXT);
     }
 
     @Test(priority = 2)
@@ -33,7 +32,7 @@ public class MenuTest {
         menuPage.clickItemPrice();
         String priceText = menuPage.getPriceTitle();
 
-        assert priceText.equals(realPriceText): "can not check price item";
+        Assert.assertEquals(priceText, REAL_PRICE_TEXT);
     }
 
     @Test(priority = 3)
@@ -41,7 +40,7 @@ public class MenuTest {
         menuPage.clickItemFAQ();
         String faqText = menuPage.getFAQTitle();
 
-        assert faqText.equals(realFAQText): "can not check FAQ item";
+        Assert.assertEquals(faqText, REAL_FAQ_TEXT);
     }
 
     @Test(priority = 4)
@@ -49,7 +48,7 @@ public class MenuTest {
         menuPage.clickItemWantTest();
         String WantTestText = menuPage.getWantTestTitle();
 
-        assert WantTestText.equals(realWantTestText): "can not check Want test sites item";
+        Assert.assertEquals(WantTestText, REAL_WANT_TEST_TEXT);
 
         DriverManager.getDriver().quit();
     }
