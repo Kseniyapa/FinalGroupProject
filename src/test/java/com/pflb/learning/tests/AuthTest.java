@@ -13,7 +13,7 @@ public class AuthTest {
     @Test
     public void authClient() {
         registrationTestPage.open(BASEURL);
-        authTestPage.authCLient();
+        authTestPage.authClient();
         boolean elementAfterAuth = authTestPage.getElementAfterAuth();
         Assert.assertTrue(elementAfterAuth);
     }

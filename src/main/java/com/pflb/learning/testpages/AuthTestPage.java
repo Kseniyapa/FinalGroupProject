@@ -7,9 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AuthTestPage {
 
-    private static final String EMAILCLIENT = "bxgq0bhpvj@1secmail.org";
+    private static final String EMAILCLIENT = "testmailforclient2@1secmail.com";
 
-    private static final String PASSWORDCLIENT = "7lhnGr";
+    private static final String PASSWORDCLIENT = "wyJpVF";
 
     public AuthTestPage() {
         PageFactory.initElements(DriverManager.getDriver(), this);
@@ -35,26 +35,33 @@ public class AuthTestPage {
         return buttonCreateTest.isDisplayed();
     }
 
-    public void authCLient() {
-        getLoginButton();
-        getLoginField(EMAILCLIENT);
-        getPasswordField(PASSWORDCLIENT);
-        getSubmitButton();
+    public void authClient(String email, String password) {
+        clickLoginButton();
+        fillLoginField(email);
+        fillPasswordField(password);
+        clickSubmitButton();
     }
 
-    private void getSubmitButton() {
+    public void authClient() {
+        clickLoginButton();
+        fillLoginField(EMAILCLIENT);
+        fillPasswordField(PASSWORDCLIENT);
+        clickSubmitButton();
+    }
+
+    private void clickSubmitButton() {
         submitButton.click();
     }
 
-    private void getPasswordField(String password) {
+    private void fillPasswordField(String password) {
         passwordField.sendKeys(password);
     }
 
-    private void getLoginField(String email) {
+    private void fillLoginField(String email) {
         loginFiled.sendKeys(email);
     }
 
-    private void getLoginButton() {
+    private void clickLoginButton() {
         loginButton.click();
     }
 

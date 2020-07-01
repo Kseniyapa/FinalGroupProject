@@ -12,34 +12,35 @@ public class ProfilePageTest {
     private final AuthTestPage authTestPage = new AuthTestPage();
     private final ProfilePage profilePage = new ProfilePage();
     private static final String BASEURL = "http://test.uxcrowd.ru";
-    private static final String EXCEPTEDLOGIN = "bxgq0bhpvj";
-    private static final String EXCEPTEDEMAIL = "bxgq0bhpvj@1secmail.org";
-    private static final String EXCEPTEDFIO = "Ivan";
+    private static final String EXCEPTEDLOGIN = "testtempmail685";
+    private static final String EXCEPTEDEMAIL = "testtempmail685@1secmail.org";
+    private static final String PASSWORD = "NhBugH";
+    private static final String EXCEPTEDFIO = "Ivan685";
 
 
     @BeforeTest
     public void authClient() {
         registrationTestPage.open(BASEURL);
-        authTestPage.authCLient();
+        authTestPage.authClient(EXCEPTEDEMAIL, PASSWORD);
     }
 
     @Test(priority = 1)
     public void checkValidLogin() {
-        profilePage.getProfileSettings();
+        profilePage.clickProfileSettings();
         String profileLogin = profilePage.getProfileLogin();
         Assert.assertEquals(profileLogin, EXCEPTEDLOGIN);
     }
 
     @Test(priority = 2)
-    public void checkValidemail() {
-        profilePage.getProfileSettings();
+    public void checkValidEmail() {
+        profilePage.clickProfileSettings();
         String profileEmail = profilePage.getProfileEmail();
         Assert.assertEquals(profileEmail, EXCEPTEDEMAIL);
     }
 
     @Test(priority = 3)
     public void checkValidFIO() {
-        profilePage.getProfileSettings();
+        profilePage.clickProfileSettings();
         String profileFIO = profilePage.getProfileFIO();
         Assert.assertEquals(profileFIO, EXCEPTEDFIO);
 

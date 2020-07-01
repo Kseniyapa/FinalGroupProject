@@ -42,7 +42,7 @@ public class ProfilePage {
         return checkProfileEmail.getAttribute("value");
     }
 
-    public void getProfileSettings() {
+    public void clickProfileSettings() {
         profileSettings.click();
     }
 }
