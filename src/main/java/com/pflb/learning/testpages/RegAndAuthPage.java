@@ -94,7 +94,7 @@ public class RegAndAuthPage {
 
     private String checkMail() {
         try {
-            Thread.sleep(30000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -128,11 +128,6 @@ public class RegAndAuthPage {
     }
 
     public void authClient() {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         String idMessage = checkMail();
         String passwordFromMessage = getPasswordFromMessage(idMessage);
         clickLoginButton();
