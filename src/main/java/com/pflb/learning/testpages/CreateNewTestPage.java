@@ -15,24 +15,34 @@ public class CreateNewTestPage {
 
     @FindBy(xpath = "//*[@id=\"top\"]/div[2]/div/div[1]/aside/section[1]/div")
     private WebElement buttonCreateNewTest; // Кнопка "Новый тест"
+
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div[1]/div[2]/label/input")
     private WebElement nameTestField; // Поле "Название теста"
+
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div[3]/div[2]/label/input")
     private WebElement webSiteField; // Поле "Адрес сайта"
+
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/button")
     private WebElement buttonPeoples; // Кнопка "К выбору аудитории"
+
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div[2]/ul/li/div/div[1]/div[2]/label/input")
     private WebElement nameSegmentField; // Поле "Название сегмента"
+
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/button[2]")
     private WebElement goToQuestButton; // Кнопка "К заданиям"
+
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/div[1]/label/textarea")
     private WebElement answerField; // Поле "Голосовой ответ"
+
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/div[1]/button")
     private WebElement addedButton; // Кнопка "Добавить"
+
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/button[2]")
     private WebElement checkAndRunButton; // Кнопка "Проверка и запуск"
+
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div/section[4]/div/button")
     private WebElement runFreeTestButton; // Кнопка "Запустить бесплатный тест"
+
     @FindBy(xpath = "//*[@id=\"modal-root\"]/div/div/div/div/div/div[1]")
     private WebElement actualTextAfterCreateNewTest; // Текст , который даёт нам понять , что тест создан
 
