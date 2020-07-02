@@ -20,7 +20,7 @@ public class CreateNewTestPage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div[3]/div[2]/label/input")
     private WebElement webSiteField; // Поле "Адрес сайта"
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/button")
-    private WebElement buttonPeoples; // Кнопка "К выбору аудитории
+    private WebElement buttonPeoples; // Кнопка "К выбору аудитории"
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div[2]/ul/li/div/div[1]/div[2]/label/input")
     private WebElement nameSegmentField; // Поле "Название сегмента"
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/button[2]")
@@ -53,6 +53,7 @@ public class CreateNewTestPage {
         new WebDriverWait(DriverManager.getDriver(), 10).until(ExpectedConditions.elementToBeClickable(runFreeTestButton));
         clickRunFreeTestButton();
     }
+
 
     private void clickRunFreeTestButton() {
         runFreeTestButton.click();
