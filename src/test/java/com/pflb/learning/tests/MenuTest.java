@@ -23,7 +23,6 @@ public class MenuTest {
         registrationTestPage.open(BASEURL);
         menuPage.clickItemProduct();
         String productText = menuPage.getProductTitle();
-
         Assert.assertEquals(productText, REAL_PRODUCT_TEXT);
     }
 
@@ -31,7 +30,6 @@ public class MenuTest {
     public void checkPrice() {
         menuPage.clickItemPrice();
         String priceText = menuPage.getPriceTitle();
-
         Assert.assertEquals(priceText, REAL_PRICE_TEXT);
     }
 
@@ -39,7 +37,6 @@ public class MenuTest {
     public void checkFAQ() {
         menuPage.clickItemFAQ();
         String faqText = menuPage.getFAQTitle();
-
         Assert.assertEquals(faqText, REAL_FAQ_TEXT);
     }
 
@@ -47,7 +44,6 @@ public class MenuTest {
     public void checkWantTest() {
         menuPage.clickItemWantTest();
         String WantTestText = menuPage.getWantTestTitle();
-
         Assert.assertEquals(WantTestText, REAL_WANT_TEST_TEXT);
 
         DriverManager.getDriver().quit();
