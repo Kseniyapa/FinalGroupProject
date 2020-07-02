@@ -15,7 +15,7 @@ public class RegistrationTestPage {
     private final String name = "Ivan" + key;
     private final String position = "Junior" + key;
     private final String company = "Perfomance" + key;
-    private final String email = "testtempmail" + key + "@1secmail.org";
+    private final String email = "testmailforclient" + key + "@1secmail.org";
     private final String phone = "79999999999";
 
 
