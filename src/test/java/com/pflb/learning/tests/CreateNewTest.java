@@ -1,9 +1,8 @@
 package com.pflb.learning.tests;
 
-import com.pflb.learning.testpages.AuthTestPage;
 import com.pflb.learning.testpages.CreateNewTestPage;
-import com.pflb.learning.testpages.RegistrationTestPage;
 import com.pflb.learning.testpages.RegAndAuthPage;
+import com.pflb.learning.testpages.RegistrationTestPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -11,7 +10,6 @@ import org.testng.annotations.Test;
 public class CreateNewTest {
 
     private final RegistrationTestPage registrationTestPage = new RegistrationTestPage();
-    private final AuthTestPage authTestPage = new AuthTestPage();
     private final CreateNewTestPage createNewTestPage = new CreateNewTestPage();
     private final RegAndAuthPage regAndAuthPage = new RegAndAuthPage();
 
