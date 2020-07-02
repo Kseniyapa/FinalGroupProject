@@ -23,7 +23,7 @@ public class CreateNewTest {
     public void authClient() {
         registrationTestPage.open(BASEURL);
         regAndAuthPage.registrationClient();
-        regAndAuthPage.authClient();;
+        regAndAuthPage.authClient();
     }
 
     @Test
