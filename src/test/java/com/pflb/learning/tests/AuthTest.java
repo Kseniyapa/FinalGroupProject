@@ -14,7 +14,7 @@ public class AuthTest {
     public void authClient() {
         registrationTestPage.open(BASEURL);
         authTestPage.authClient();
-        boolean elementAfterAuth = authTestPage.getElementAfterAuth();
+        boolean elementAfterAuth = authTestPage.getCreateTestButtonState();
         Assert.assertTrue(elementAfterAuth, "Can not log in");
     }
 }

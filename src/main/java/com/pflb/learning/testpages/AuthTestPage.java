@@ -35,13 +35,6 @@ public class AuthTestPage {
         return buttonCreateTest.isDisplayed();
     }
 
-    public void authClient(String email, String password) {
-        clickLoginButton();
-        fillLoginField(email);
-        fillPasswordField(password);
-        clickSubmitButton();
-    }
-
     public void authClient() {
         clickLoginButton();
         fillLoginField(EMAILCLIENT);
