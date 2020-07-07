@@ -27,7 +27,7 @@ public class AuthTestPage {
     @FindBy(css = "#form_auth button")
     private WebElement submitButton; // Кнопка "Вход"
 
-    @FindBy(xpath = "//*[@id=\"top\"]/div[2]/div/div[2]/div[1]/div[1]/span")
+    @FindBy(className = "new_test")
     private WebElement buttonCreateTest; //Элемент , который даёт понять нам что мы перешли на страницу профиля
 
 
