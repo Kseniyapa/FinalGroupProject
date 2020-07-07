@@ -23,28 +23,28 @@ public class MenuTest {
         registrationTestPage.open(BASEURL);
         menuPage.clickItemProduct();
         String productText = menuPage.getProductTitle();
-        Assert.assertEquals(productText, REAL_PRODUCT_TEXT);
+        Assert.assertEquals(productText, REAL_PRODUCT_TEXT, "Can not enter Product section");
     }
 
     @Test(priority = 2)
     public void checkPrice() {
         menuPage.clickItemPrice();
         String priceText = menuPage.getPriceTitle();
-        Assert.assertEquals(priceText, REAL_PRICE_TEXT);
+        Assert.assertEquals(priceText, REAL_PRICE_TEXT, "Can not enter Price section");
     }
 
     @Test(priority = 3)
     public void checkFAQ() {
         menuPage.clickItemFAQ();
         String faqText = menuPage.getFAQTitle();
-        Assert.assertEquals(faqText, REAL_FAQ_TEXT);
+        Assert.assertEquals(faqText, REAL_FAQ_TEXT, "Can not enter FAQ section");
     }
 
     @Test(priority = 4)
     public void checkWantTest() {
         menuPage.clickItemWantTest();
         String WantTestText = menuPage.getWantTestTitle();
-        Assert.assertEquals(WantTestText, REAL_WANT_TEST_TEXT);
+        Assert.assertEquals(WantTestText, REAL_WANT_TEST_TEXT, "Can not enter Want section");
 
         DriverManager.getDriver().quit();
     }

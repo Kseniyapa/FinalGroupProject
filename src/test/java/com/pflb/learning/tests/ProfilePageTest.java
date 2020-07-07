@@ -28,21 +28,21 @@ public class ProfilePageTest {
     public void checkValidLogin() {
         profilePage.clickProfileSettings();
         String profileLogin = profilePage.getProfileLogin();
-        Assert.assertEquals(profileLogin, EXCEPTEDLOGIN);
+        Assert.assertEquals(profileLogin, EXCEPTEDLOGIN, "Login is wrong");
     }
 
     @Test(priority = 2)
     public void checkValidEmail() {
         profilePage.clickProfileSettings();
         String profileEmail = profilePage.getProfileEmail();
-        Assert.assertEquals(profileEmail, EXCEPTEDEMAIL);
+        Assert.assertEquals(profileEmail, EXCEPTEDEMAIL, "Email is wrong");
     }
 
     @Test(priority = 3)
     public void checkValidFIO() {
         profilePage.clickProfileSettings();
         String profileFIO = profilePage.getProfileFIO();
-        Assert.assertEquals(profileFIO, EXCEPTEDFIO);
+        Assert.assertEquals(profileFIO, EXCEPTEDFIO, "FIO is wrong");
 
     }
 }

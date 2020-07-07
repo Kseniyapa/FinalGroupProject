@@ -28,7 +28,7 @@ public class CreateNewTest {
     public void goToNewTest() {
         createNewTestPage.createNewTest();
         String actualText = createNewTestPage.getActualText();
-        Assert.assertEquals(actualText, EXCEPTEDTEXT);
+        Assert.assertEquals(actualText, EXCEPTEDTEXT, "Can not create new test");
     }
 
 }

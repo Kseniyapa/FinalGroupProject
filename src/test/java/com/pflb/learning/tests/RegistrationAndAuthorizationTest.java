@@ -20,7 +20,7 @@ public class RegistrationAndAuthorizationTest {
         registrationTestPage.open(BASEURL);
         regAndAuthPage.registrationClient();
         String actualTextAfterReg = regAndAuthPage.getActualTextAfterReg();
-        Assert.assertEquals(actualTextAfterReg, EXCEPTEDTEXTAFTERREGISTRATION);
+        Assert.assertEquals(actualTextAfterReg, EXCEPTEDTEXTAFTERREGISTRATION, "Can not register");
     }
 
     @Test(priority = 2)
@@ -28,7 +28,7 @@ public class RegistrationAndAuthorizationTest {
         registrationTestPage.open(BASEURL);
         regAndAuthPage.authClient();
         boolean elementAfterAuth = authTestPage.getElementAfterAuth();
-        Assert.assertTrue(elementAfterAuth);
+        Assert.assertTrue(elementAfterAuth, "Can not login after automatic registration");
     }
 
 
