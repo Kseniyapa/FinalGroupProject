@@ -6,6 +6,8 @@ import com.pflb.learning.testpages.RegistrationTestPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertTrue;
+
 public class RegistrationAndAuthorizationTest {
     private final RegistrationTestPage registrationTestPage = new RegistrationTestPage();
     private final RegAndAuthPage regAndAuthPage = new RegAndAuthPage();
@@ -20,15 +22,15 @@ public class RegistrationAndAuthorizationTest {
         registrationTestPage.open(BASEURL);
         regAndAuthPage.registrationClient();
         String actualTextAfterReg = regAndAuthPage.getActualTextAfterReg();
-        Assert.assertEquals(actualTextAfterReg, EXCEPTEDTEXTAFTERREGISTRATION, "Can not register");
+        Assert.assertEquals(actualTextAfterReg, EXCEPTEDTEXTAFTERREGISTRATION);
     }
 
     @Test(priority = 2)
     public void authClient() {
         registrationTestPage.open(BASEURL);
         regAndAuthPage.authClient();
-        boolean elementAfterAuth = authTestPage.getElementAfterAuth();
-        Assert.assertTrue(elementAfterAuth, "Can not login after automatic registration");
+        boolean elementAfterAuth = authTestPage.getCreateTestButtonState();
+        assertTrue(elementAfterAuth, "Can not login after automatic registration");
     }
 
 

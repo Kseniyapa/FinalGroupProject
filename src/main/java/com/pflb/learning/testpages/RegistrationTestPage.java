@@ -71,6 +71,7 @@ public class RegistrationTestPage {
         clickButtonAgree();
     }
 
+
     private void clickButtonAgree() {
         buttonAgree.click();
     }
@@ -114,4 +115,5 @@ public class RegistrationTestPage {
     public void close() {
         DriverManager.getDriver().close();
     }
+
 }

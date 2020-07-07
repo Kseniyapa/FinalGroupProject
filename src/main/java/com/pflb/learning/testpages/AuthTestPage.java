@@ -31,7 +31,7 @@ public class AuthTestPage {
     private WebElement buttonCreateTest; //Элемент , который даёт понять нам что мы перешли на страницу профиля
 
 
-    public boolean getElementAfterAuth() {
+    public boolean getCreateTestButtonState() {
         return buttonCreateTest.isDisplayed();
     }
 

@@ -16,4 +16,5 @@ public class RegistrationTest {
         String actualTextAfterReg = registrationTestPage.getActualTextAfterReg();
         Assert.assertEquals(actualTextAfterReg, EXCEPTEDTEXTAFTERREGISTRATION, "Can not register");
     }
+
 }
