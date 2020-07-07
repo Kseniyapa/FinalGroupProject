@@ -94,15 +94,17 @@ public class RegAndAuthPage {
 
     private String checkMail() {
         try {
-            Thread.sleep(10000);
+            Thread.sleep(30000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         Response response = get("https://www.1secmail.com/api/v1/?action=getMessages&login=" + email + "&domain=1secmail.com");
+        System.out.println(email);
         JsonPath jsonPath = response.jsonPath();
         System.out.println(jsonPath.prettyPrint());
         Object id = jsonPath.get("id");
         String s = String.valueOf(id);
+        System.out.println(id);
         return s.substring(1, s.length() - 1);
     }
 
@@ -110,6 +112,7 @@ public class RegAndAuthPage {
         Response response = get("https://www.1secmail.com/api/v1/?action=readMessage&login=" + email + "&domain=1secmail.com&id=" + idMessage);
         JsonPath jsonPath = response.jsonPath();
         String body = jsonPath.get("body");
+        System.out.println(body);
 
         Pattern p = Pattern.compile(".*<p>Пароль: [a-zA-Z0-9]+</p>.*");
 
@@ -130,6 +133,11 @@ public class RegAndAuthPage {
     }
 
     public void authClient() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         String idMessage = checkMail();
         String passwordFromMessage = getPasswordFromMessage(idMessage);
         clickLoginButton();
